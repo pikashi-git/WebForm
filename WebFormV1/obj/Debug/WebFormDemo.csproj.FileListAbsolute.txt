@@ -1,0 +1,13 @@
+D:\專案\Git\WebForm網站\bin\Test.dll.config
+D:\專案\Git\WebForm網站\bin\Test.dll
+D:\專案\Git\WebForm網站\bin\Test.pdb
+D:\專案\Git\WebForm網站\bin\AntiXssLibrary.dll
+D:\專案\Git\WebForm網站\bin\HtmlSanitizationLibrary.dll
+D:\專案\Git\WebForm網站\bin\AntiXssLibrary.xml
+D:\專案\Git\WebForm網站\bin\HtmlSanitizationLibrary.xml
+D:\專案\Git\WebForm網站\obj\Debug\WebFormDemo.csprojAssemblyReference.cache
+D:\專案\Git\WebForm網站\obj\Debug\WebFormDemo.csproj.CoreCompileInputs.cache
+D:\專案\Git\WebForm網站\obj\Debug\WebFormDemo.csproj.CopyComplete
+D:\專案\Git\WebForm網站\obj\Debug\Test.dll
+D:\專案\Git\WebForm網站\obj\Debug\Test.pdb
+D:\專案\Git\WebForm網站\bin\jose-jwt.dll

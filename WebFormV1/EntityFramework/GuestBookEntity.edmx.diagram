@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="495e2f7d8ce14a9abc3a13d9cd4f8299" Name="Diagram1">
+        <EntityTypeShape EntityType="GuestBookEntity.cart" Width="1.5" PointX="5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuestBookEntity.cartItem" Width="1.5" PointX="7" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuestBookEntity.guestbook" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuestBookEntity.item" Width="1.5" PointX="4.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuestBookEntity.role" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuestBookEntity.user" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="GuestBookEntity.FK__cartSave__userID__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="GuestBookEntity.FK_cartBuy_item" ManuallyRouted="false" />
+        <AssociationConnector Association="GuestBookEntity.FK_guestbook_guestbook" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,13 @@
+D:\專案\Git\WebForm_Test\bin\Test.dll.config
+D:\專案\Git\WebForm_Test\bin\Test.dll
+D:\專案\Git\WebForm_Test\bin\Test.pdb
+D:\專案\Git\WebForm_Test\bin\AntiXssLibrary.dll
+D:\專案\Git\WebForm_Test\bin\HtmlSanitizationLibrary.dll
+D:\專案\Git\WebForm_Test\bin\jose-jwt.dll
+D:\專案\Git\WebForm_Test\bin\AntiXssLibrary.xml
+D:\專案\Git\WebForm_Test\bin\HtmlSanitizationLibrary.xml
+D:\專案\Git\WebForm_Test\obj\Debug\WebForm_Test.csprojAssemblyReference.cache
+D:\專案\Git\WebForm_Test\obj\Debug\WebForm_Test.csproj.CoreCompileInputs.cache
+D:\專案\Git\WebForm_Test\obj\Debug\WebForm_Test.csproj.CopyComplete
+D:\專案\Git\WebForm_Test\obj\Debug\Test.dll
+D:\專案\Git\WebForm_Test\obj\Debug\Test.pdb

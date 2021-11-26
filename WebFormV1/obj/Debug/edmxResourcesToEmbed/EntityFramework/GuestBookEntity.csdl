@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GuestBookEntity" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cart">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" />
+    <Property Name="cart_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="Self.FK__cartSave__userID__208CD6FA" FromRole="cart" ToRole="users" />
+  </EntityType>
+  <EntityType Name="cartItem">
+    <Key>
+      <PropertyRef Name="cart_id" />
+      <PropertyRef Name="itemID" />
+    </Key>
+    <Property Name="cart_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="item" Relationship="Self.FK_cartBuy_item" FromRole="cartItem" ToRole="items" />
+  </EntityType>
+  <EntityType Name="guestbook">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userID" Type="Int32" Nullable="false" />
+    <Property Name="postContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="parent" Type="Int32" Nullable="false" />
+    <Property Name="createtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatetime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="guestbook1" Relationship="Self.FK_guestbook_guestbook" FromRole="guestbook" ToRole="guestbook1" />
+    <NavigationProperty Name="guestbook2" Relationship="Self.FK_guestbook_guestbook" FromRole="guestbook1" ToRole="guestbook" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="itemID" />
+    </Key>
+    <Property Name="itemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Int32" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="cartItems" Relationship="Self.FK_cartBuy_item" FromRole="items" ToRole="cartItem" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="roleID" />
+      <PropertyRef Name="roleName" />
+    </Key>
+    <Property Name="roleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="roleDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="groups" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="enabled" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="names" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nick" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="account" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="authcode" Type="Guid" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="validateDate" Type="DateTime" Precision="3" />
+    <Property Name="enabled" Type="Boolean" />
+    <NavigationProperty Name="cart" Relationship="Self.FK__cartSave__userID__208CD6FA" FromRole="users" ToRole="cart" />
+  </EntityType>
+  <Association Name="FK__cartSave__userID__208CD6FA">
+    <End Role="users" Type="Self.user" Multiplicity="1" />
+    <End Role="cart" Type="Self.cart" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="cart">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cartBuy_item">
+    <End Role="items" Type="Self.item" Multiplicity="1" />
+    <End Role="cartItem" Type="Self.cartItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="items">
+        <PropertyRef Name="itemID" />
+      </Principal>
+      <Dependent Role="cartItem">
+        <PropertyRef Name="itemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_guestbook_guestbook">
+    <End Role="guestbook" Type="Self.guestbook" Multiplicity="1" />
+    <End Role="guestbook1" Type="Self.guestbook" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="guestbook">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="guestbook1">
+        <PropertyRef Name="id" />
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GuestBookEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="carts" EntityType="Self.cart" />
+    <EntitySet Name="cartItems" EntityType="Self.cartItem" />
+    <EntitySet Name="guestbooks" EntityType="Self.guestbook" />
+    <EntitySet Name="items" EntityType="Self.item" />
+    <EntitySet Name="roles" EntityType="Self.role" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FK__cartSave__userID__208CD6FA" Association="Self.FK__cartSave__userID__208CD6FA">
+      <End Role="users" EntitySet="users" />
+      <End Role="cart" EntitySet="carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cartBuy_item" Association="Self.FK_cartBuy_item">
+      <End Role="items" EntitySet="items" />
+      <End Role="cartItem" EntitySet="cartItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_guestbook_guestbook" Association="Self.FK_guestbook_guestbook">
+      <End Role="guestbook" EntitySet="guestbooks" />
+      <End Role="guestbook1" EntitySet="guestbooks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GuestBookEntityStoreContainer" CdmEntityContainer="GuestBookEntities1">
+    <EntitySetMapping Name="carts">
+      <EntityTypeMapping TypeName="GuestBookEntity.cart">
+        <MappingFragment StoreEntitySet="cart">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cartItems">
+      <EntityTypeMapping TypeName="GuestBookEntity.cartItem">
+        <MappingFragment StoreEntitySet="cartItem">
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="itemID" ColumnName="itemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guestbooks">
+      <EntityTypeMapping TypeName="GuestBookEntity.guestbook">
+        <MappingFragment StoreEntitySet="guestbook">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="postContent" ColumnName="postContent" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="items">
+      <EntityTypeMapping TypeName="GuestBookEntity.item">
+        <MappingFragment StoreEntitySet="items">
+          <ScalarProperty Name="itemID" ColumnName="itemID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="GuestBookEntity.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="roleDesc" ColumnName="roleDesc" />
+          <ScalarProperty Name="groups" ColumnName="groups" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="GuestBookEntity.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="names" ColumnName="names" />
+          <ScalarProperty Name="nick" ColumnName="nick" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="authcode" ColumnName="authcode" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="validateDate" ColumnName="validateDate" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

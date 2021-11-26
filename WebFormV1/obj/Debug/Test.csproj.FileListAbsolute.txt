@@ -1,0 +1,13 @@
+C:\Users\User\source\repos\Test\bin\Test.dll.config
+C:\Users\User\source\repos\Test\bin\Test.dll
+C:\Users\User\source\repos\Test\bin\Test.pdb
+C:\Users\User\source\repos\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Test\obj\Debug\Test.dll
+C:\Users\User\source\repos\Test\obj\Debug\Test.pdb
+D:\專案\Test\bin\Test.dll.config
+D:\專案\Test\bin\Test.dll
+D:\專案\Test\bin\Test.pdb
+D:\專案\Test\obj\Debug\Test.csprojAssemblyReference.cache
+D:\專案\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+D:\專案\Test\obj\Debug\Test.dll
+D:\專案\Test\obj\Debug\Test.pdb

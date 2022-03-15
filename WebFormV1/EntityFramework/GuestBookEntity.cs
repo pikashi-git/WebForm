@@ -7,3 +7,76 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
+public partial class cart
+{
+    public int userID { get; set; }
+    public string cart_id { get; set; }
+
+    public virtual user user { get; set; }
+}
+
+public partial class cartItem
+{
+    public string cart_id { get; set; }
+    public int itemID { get; set; }
+
+    public virtual item item { get; set; }
+}
+
+public partial class guestbook
+{
+    public int id { get; set; }
+    public int userID { get; set; }
+    public string postContent { get; set; }
+    public int parent { get; set; }
+    public System.DateTime createtime { get; set; }
+    public Nullable<System.DateTime> updatetime { get; set; }
+
+    public virtual guestbook guestbook1 { get; set; }
+    public virtual guestbook guestbook2 { get; set; }
+}
+
+public partial class item
+{
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public item()
+    {
+        this.cartItems = new HashSet<cartItem>();
+    }
+
+    public int itemID { get; set; }
+    public string name { get; set; }
+    public int price { get; set; }
+    public string image { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+    public virtual ICollection<cartItem> cartItems { get; set; }
+}
+
+public partial class role
+{
+    public int roleID { get; set; }
+    public string roleName { get; set; }
+    public string roleDesc { get; set; }
+    public string groups { get; set; }
+    public bool enabled { get; set; }
+}
+
+public partial class user
+{
+    public int userID { get; set; }
+    public string names { get; set; }
+    public string nick { get; set; }
+    public string account { get; set; }
+    public string password { get; set; }
+    public string email { get; set; }
+    public Nullable<System.Guid> authcode { get; set; }
+    public string role { get; set; }
+    public Nullable<System.DateTime> validateDate { get; set; }
+    public Nullable<bool> enabled { get; set; }
+
+    public virtual cart cart { get; set; }
+}

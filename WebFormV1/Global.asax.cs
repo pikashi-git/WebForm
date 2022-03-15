@@ -6,7 +6,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace Test
+namespace WebFormV1
 {
     public class Global : System.Web.HttpApplication
     {
